@@ -3,13 +3,13 @@
 def header
   "<html>"\
   "<head>"\
-  "<style>img{clear:both}</style>"\
+  "<style>img{display:block}</style>"\
   "</head>"
 end
 
 def body
   if filenames = Dir["memes/*.jpg"]
-    filenames.sort_by {|filename| File.ctime(filename) }.map {|filename| image(filename)}.join(" <br />")
+    filenames.sort_by {|filename| File.ctime(filename) }.map {|filename| image(filename)}.join(" ")
   else
     "<p>empty</p>"
   end
