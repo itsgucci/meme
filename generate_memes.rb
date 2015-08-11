@@ -8,14 +8,16 @@ def header
 end
 
 def body
-  if filenames = Dir["memes/*.jpg"]
-    filenames.sort_by {|filename| File.ctime(filename) }.reverse.map {|filename| image(filename)}.join(" ")
+  if filenames
+    "<p>#{filenames.size} memes</p>" + images
   else
     "<p>empty</p>"
   end
   
 end
-
+def images
+  filenames.map {|filename| image(filename)}.join(" ")
+end
 def image(filename)
   # markdown?
   # "![me meme](memes/#{filename})"
@@ -26,6 +28,10 @@ end
 
 def footer
   "</html>"
+end
+
+def filenames
+  @filenames ||= Dir["memes/*.jpg"].sort_by {|filename| File.ctime(filename) }.reverse
 end
 
 def overwrite_index(html)
