@@ -14,7 +14,11 @@ def body
 end
 
 def image(filename)
-  "![me meme](memes/#{filename})"
+  # markdown?
+  # "![me meme](memes/#{filename})"
+  
+  # html
+  "<img src='memes/#{filename}' />"
 end
 
 def footer
