@@ -9,7 +9,7 @@ end
 
 def body
   if filenames = Dir["memes/*.jpg"]
-    filenames.sort_by {|filename| File.ctime(filename) }.map {|filename| image(filename)}.join(" ")
+    filenames.sort_by {|filename| File.ctime(filename) }.map {|filename| image(filename)}.join(" <br />")
   else
     "<p>empty</p>"
   end
