@@ -3,7 +3,7 @@
 def header
   "<html>"\
   "<head>"\
-  "<style>img{display:block}</style>"\
+  "<style>img{display:block;margin: 2em auto}</style>"\
   "</head>"
 end
 
@@ -31,7 +31,7 @@ def footer
 end
 
 def filenames
-  @filenames ||= Dir["memes/*.jpg"].sort_by {|filename| File.ctime(filename) }.reverse
+  @filenames ||= Dir["memes/*.jpg"].sort_by {|filename| File.ctime(filename) }.shuffle
 end
 
 def overwrite_index(html)
