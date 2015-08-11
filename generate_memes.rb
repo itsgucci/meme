@@ -18,7 +18,7 @@ def image(filename)
   # "![me meme](memes/#{filename})"
   
   # html
-  "<img src='memes/#{filename}' />"
+  "<img src='#{filename}' />"
 end
 
 def footer
