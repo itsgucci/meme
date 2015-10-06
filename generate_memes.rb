@@ -9,6 +9,7 @@ end
 
 def body
   if filenames
+    "<p><a href='https://github.com/itsgucci/meme/'>link to github so you can use git to git meme</a></p>"\
     "<p>#{filenames.size} memes</p>" + images
   else
     "<p>empty</p>"
